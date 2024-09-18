@@ -1,4 +1,9 @@
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  useLocation,
+} from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Login from './routes/Login/Login';
@@ -8,9 +13,10 @@ import Search from './routes/Search/Search';
 import NotFound from './routes/NotFound/NotFound';
 
 const Layout: React.FC = () => {
+  const location = useLocation();
   return (
     <>
-      <Navigation />
+      {location.pathname !== '/' && <Navigation />}
       <Outlet />
     </>
   );
