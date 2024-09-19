@@ -49,7 +49,7 @@ export const Search = styled.div`
 `;
 
 export const SearchIcon = styled.img`
-  width: 2.5rem;
+  width: 2.3rem;
   cursor: pointer;
 
   @media (max-width: 450px) {
@@ -74,7 +74,7 @@ export const SearchInput = styled.input`
 `;
 
 export const Profile = styled.img`
-  width: 2.5rem;
+  width: 2.3rem;
   cursor: pointer;
 
   @media (max-width: 450px) {
