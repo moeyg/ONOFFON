@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import * as S from './Navigation.style';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navigation() {
