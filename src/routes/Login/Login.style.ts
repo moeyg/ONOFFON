@@ -71,7 +71,7 @@ export const LoginButton = styled.button`
   padding: 1.2rem 2.5rem;
   border-radius: 50%;
   border: 1px solid black;
-  background: linear-gradient(to bottom, #d9d9d9, #8380ff, #0700ff);
+  background: linear-gradient(to bottom, #d9d9d9, #f791c3);
   text-align: center;
   display: inline-block;
   cursor: pointer;
