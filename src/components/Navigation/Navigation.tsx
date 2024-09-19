@@ -2,7 +2,7 @@ import * as S from './Navigation.style';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function Navigation() {
+const Navigation = () => {
   const [inputVisible, setInputVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -55,4 +55,6 @@ export default function Navigation() {
       </S.Menu>
     </S.Nav>
   );
-}
+};
+
+export default Navigation;

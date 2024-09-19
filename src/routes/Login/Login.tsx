@@ -1,6 +1,6 @@
 import * as S from './Login.style';
 
-export default function Login() {
+const Login = () => {
   return (
     <S.LoginPage>
       <S.Container>
@@ -23,4 +23,6 @@ export default function Login() {
       </S.Container>
     </S.LoginPage>
   );
-}
+};
+
+export default Login;
