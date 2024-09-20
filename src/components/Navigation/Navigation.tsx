@@ -28,7 +28,7 @@ const Navigation = () => {
   return (
     <S.Nav>
       <S.Logo
-        src='/public/images/logo.svg'
+        src='/images/logo.svg'
         alt='35MM Logo'
         onClick={() => (window.location.href = '/')}
       />
@@ -43,15 +43,12 @@ const Navigation = () => {
             />
           )}
           <S.SearchIcon
-            src='/public/images/search-icon.svg'
+            src='/images/search-icon.svg'
             alt='search icon'
             onClick={handleSearchClick}
           />
         </S.Search>
-        <S.Profile
-          src='/public/images/profile-icon.svg'
-          alt='user profile icon'
-        />
+        <S.Profile src='/images/profile-icon.svg' alt='user profile icon' />
       </S.Menu>
     </S.Nav>
   );
