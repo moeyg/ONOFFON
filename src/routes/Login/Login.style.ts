@@ -54,7 +54,7 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.img`
-  max-width: 86px;
+  max-width: 106px;
 `;
 
 export const Description = styled.p`
@@ -71,7 +71,7 @@ export const LoginButton = styled.button`
   padding: 1.2rem 2.5rem;
   border-radius: 50%;
   border: 1px solid black;
-  background: linear-gradient(to bottom, #d9d9d9, #f791c3);
+  background: linear-gradient(to bottom, #d9d9d9, #393939);
   text-align: center;
   display: inline-block;
   cursor: pointer;

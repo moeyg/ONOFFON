@@ -18,7 +18,7 @@ const Login = () => {
           src='/images/repo-qrcode.svg'
           alt='github repo로 이동하는 qrcode'
         />
-        <S.LoginButton>구글로 로그인하기</S.LoginButton>
+        <S.LoginButton>35MM 로그인하기</S.LoginButton>
         <S.Copyright>ⓒmoeyg</S.Copyright>
       </S.Container>
     </S.LoginPage>
