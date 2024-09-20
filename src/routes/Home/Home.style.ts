@@ -6,6 +6,10 @@ export const Home = styled.main`
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  top: 100px;
-  padding: 0 1rem;
+  top: 50px;
+  padding: 0rem 1rem 3.5rem;
+
+  @media (max-width: 450px) {
+    top: 30px;
+  }
 `;
