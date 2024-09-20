@@ -7,7 +7,9 @@ export const Nav = styled.nav`
   right: 0;
   height: 70px;
   padding: 0 1rem;
+  box-sizing: border-box;
   border-bottom: 1px solid #d9d9d9;
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,16 +17,17 @@ export const Nav = styled.nav`
 
   @media (max-width: 450px) {
     padding: -0.3rem 1rem;
+    height: 50px;
   }
 `;
 
 export const Logo = styled.img`
-  width: 4.2rem;
+  width: 6rem;
   cursor: pointer;
   display: inline-block;
 
   @media (max-width: 450px) {
-    width: 3rem;
+    width: 4rem;
   }
 `;
 
@@ -53,7 +56,7 @@ export const SearchIcon = styled.img`
   cursor: pointer;
 
   @media (max-width: 450px) {
-    width: 1.8rem;
+    width: 1.5rem;
   }
 `;
 
@@ -78,6 +81,6 @@ export const Profile = styled.img`
   cursor: pointer;
 
   @media (max-width: 450px) {
-    width: 1.8rem;
+    width: 1.5rem;
   }
 `;
