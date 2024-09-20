@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 0 26px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 30px;
+  padding: 0 1.2rem;
 `;
 
 export const MovieGenre = styled.h2`

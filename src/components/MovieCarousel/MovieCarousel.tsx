@@ -60,20 +60,24 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
         spaceBetween={15}
         breakpoints={{
           1378: {
-            slidesPerView: 9,
-            slidesPerGroup: 9,
-          },
-          998: {
             slidesPerView: 8,
             slidesPerGroup: 8,
           },
-          625: {
-            slidesPerView: 5,
-            slidesPerGroup: 5,
+          1100: {
+            slidesPerView: 7,
+            slidesPerGroup: 7,
           },
-          0: {
+          998: {
+            slidesPerView: 6,
+            slidesPerGroup: 6,
+          },
+          625: {
             slidesPerView: 4,
             slidesPerGroup: 4,
+          },
+          0: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
           },
         }}
       >
