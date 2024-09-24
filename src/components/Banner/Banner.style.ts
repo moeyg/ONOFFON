@@ -13,6 +13,10 @@ export const Banner = styled.section<Path>`
   background-color: black;
   height: 480px;
   width: 100%;
+  box-shadow: rgb(0 0 0 /69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  border-radius: 20px;
+  margin-top: 1.2rem;
 
   @media (max-width: 750px) {
     height: 460px;
@@ -33,17 +37,22 @@ export const Backdrop = styled.div<Path>`
 export const BannerContents = styled.div``;
 
 export const PlayButton = styled.img`
-  width: 7rem;
-  height: 7rem;
+  width: 6rem;
+  height: 6rem;
   cursor: pointer;
+  transition: 300ms;
 
-  @media (max-width: 1200px) {
-    width: 6rem;
-    height: 6rem;
+  &:hover {
+    opacity: 0.7;
+    scale: calc(1.05);
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     width: 5rem;
     height: 5rem;
+  }
+  @media (max-width: 800px) {
+    width: 4rem;
+    height: 4rem;
   }
   @media (max-width: 550px) {
     width: 3.5rem;

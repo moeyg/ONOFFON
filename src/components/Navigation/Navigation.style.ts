@@ -5,11 +5,11 @@ export const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 60px;
   padding-left: 0.7rem;
   padding-right: 1.1rem;
   box-sizing: border-box;
-  background-color: black;
+  background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-  width: 7.5rem;
+  width: 6.3rem;
   cursor: pointer;
   display: inline-block;
 
@@ -52,7 +52,7 @@ export const Search = styled.div`
 `;
 
 export const SearchIcon = styled.img`
-  width: 2.3rem;
+  width: 2rem;
   cursor: pointer;
 
   @media (max-width: 450px) {
@@ -64,11 +64,12 @@ export const SearchInput = styled.input`
   width: 15rem;
   font-size: 1.2rem;
   background-color: inherit;
-  border: 2px solid #ff7f00;
-  color: #ff7f00;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   border-radius: 25px;
   padding: 5px 12px;
   outline: none;
+  cursor: pointer;
 
   @media (max-width: 450px) {
     width: 9rem;
@@ -77,7 +78,7 @@ export const SearchInput = styled.input`
 `;
 
 export const Menu = styled.img`
-  width: 2.3rem;
+  width: 2rem;
   cursor: pointer;
 
   @media (max-width: 450px) {

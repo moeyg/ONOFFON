@@ -20,12 +20,15 @@ interface MovieData {
 }
 
 interface Movie {
-  id: number;
+  id?: number;
   title?: string;
   name?: string;
   original_name?: string;
   overview?: string;
   backdrop_path?: string;
+  release_date?: string;
+  first_air_date?: string;
+  vote_average?: string;
 }
 
 const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
@@ -42,18 +45,19 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
     }
   }, [fetchUrl]);
 
-  const openModal = (movie: Movie) => {
-    setModalOpen(true);
-    setMovie(movie);
-  };
-
   useEffect(() => {
     fetchMoviesData();
   }, [fetchMoviesData]);
 
+  const openModal = (movie: Movie) => {
+    setMovie(movie);
+    setModalOpen(true);
+    console.log(movie);
+  };
+
   return (
     <S.Container>
-      <S.MovieGenre>{genre}</S.MovieGenre>
+      <S.MovieGenre>| {genre}</S.MovieGenre>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         loop={true}
@@ -63,15 +67,15 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
         breakpoints={{
           1200: {
             slidesPerView: 5,
-            slidesPerGroup: 5,
+            slidesPerGroup: 2,
           },
           998: {
             slidesPerView: 4,
-            slidesPerGroup: 4,
+            slidesPerGroup: 2,
           },
           0: {
             slidesPerView: 3,
-            slidesPerGroup: 3,
+            slidesPerGroup: 2,
           },
         }}
       >
@@ -88,10 +92,10 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
             </S.Movie>
           </SwiperSlide>
         ))}
-        {modalOpen && (
-          <Modal setModalOpen={setModalOpen} {...movie} genre={genre} />
-        )}
       </Swiper>
+      {modalOpen && (
+        <Modal setModalOpen={setModalOpen} movie={movie} genre={genre} />
+      )}
     </S.Container>
   );
 };
