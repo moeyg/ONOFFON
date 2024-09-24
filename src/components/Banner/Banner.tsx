@@ -20,6 +20,7 @@ const Banner: React.FC = () => {
   const [play, setPlay] = useState(false);
 
   useEffect(() => {
+    setPlay(false);
     fetchMovieData();
   }, []);
 
@@ -38,11 +39,26 @@ const Banner: React.FC = () => {
     }
   };
 
-  return (
+  return play ? (
+    <S.Preview>
+      <S.Video>
+        <S.Close onClick={() => setPlay(false)}>✕</S.Close>
+        <S.Iframe
+          src={`https://www.youtube.com/embed/${movie?.videos?.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie?.videos?.results[0]?.key}`}
+          allow='autoplay; fullscreen'
+        ></S.Iframe>
+      </S.Video>
+    </S.Preview>
+  ) : (
     <S.Banner $path={movie?.backdrop_path || ''}>
-      <S.Backdrop $path={'/images/background.svg'}>
-        <S.PlayButton src='/images/play-button.svg' />
-      </S.Backdrop>
+      <S.VisualEffect $path={'/images/background.svg'}>
+        {movie?.videos?.results[0]?.key && (
+          <S.PlayButton
+            onClick={() => setPlay(true)}
+            src='/images/play-button.svg'
+          />
+        )}
+      </S.VisualEffect>
       <S.FadeBottom></S.FadeBottom>
     </S.Banner>
   );

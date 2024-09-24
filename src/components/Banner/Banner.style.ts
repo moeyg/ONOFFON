@@ -23,7 +23,7 @@ export const Banner = styled.section<Path>`
   }
 `;
 
-export const Backdrop = styled.div<Path>`
+export const VisualEffect = styled.div<Path>`
   background-image: ${(props) => `url('${props.$path}')`};
   background-size: cover;
   background-position: center;
@@ -73,8 +73,59 @@ export const FadeBottom = styled.div`
 
 // --- Preview frame
 
-export const Preview = styled.section``;
+export const Preview = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgb(0 0 0 /69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  border-radius: 20px;
+  margin-top: 1.2rem;
+`;
 
-export const PreviewContents = styled.div``;
+export const Video = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
 
-export const Iframe = styled.iframe``;
+export const Iframe = styled.iframe`
+  width: 100%;
+  height: 480px;
+  z-index: -1;
+  opacity: 0.65;
+  border: none;
+
+  @media (max-width: 750px) {
+    height: 460px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const Close = styled.button`
+  position: absolute;
+  left: 12px;
+  bottom: 13px;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--primary-color);
+  background-color: inherit;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+
+  @media (min-width: 1200px) {
+    font-size: 1.8rem;
+  }
+`;
