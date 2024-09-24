@@ -67,7 +67,7 @@ export const SearchInput = styled.input`
   border: 2px solid #ff7f00;
   color: #ff7f00;
   border-radius: 25px;
-  padding: 5px;
+  padding: 5px 12px;
   outline: none;
 
   @media (max-width: 450px) {
