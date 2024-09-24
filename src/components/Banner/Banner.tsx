@@ -38,34 +38,19 @@ const Banner: React.FC = () => {
     }
   };
 
-  const truncate = (overview: string | undefined, n: number) => {
-    if (typeof overview === 'string')
-      return overview?.length > n ? overview.substring(0, n) + '...' : overview;
-    else return;
-  };
+  // const truncate = (overview: string | undefined, n: number) => {
+  //   if (typeof overview === 'string')
+  //     return overview?.length > n ? overview.substring(0, n) + '...' : overview;
+  //   else return;
+  // };
 
   return (
-    <>
-      <S.MovieBackdrop
-        src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-      />
-      <S.Banner>
-        <S.BannerContents>
-          <S.MovieTitle>
-            {movie?.title || movie?.name || movie?.original_name}
-          </S.MovieTitle>
-          <S.MovieDescription>
-            {truncate(movie?.overview, 100)}
-          </S.MovieDescription>
-          <S.PlayButton>
-            {movie?.videos?.results[0]?.key && (
-              <S.Button onClick={() => setPlay(true)}>▷ Play</S.Button>
-            )}
-          </S.PlayButton>
-        </S.BannerContents>
-      </S.Banner>
+    <S.Banner $path={movie?.backdrop_path || ''}>
+      <S.Backdrop $path={'/images/background.svg'}>
+        <S.PlayButton src='/images/play-button.svg' />
+      </S.Backdrop>
       <S.FadeBottom></S.FadeBottom>
-    </>
+    </S.Banner>
   );
 };
 
