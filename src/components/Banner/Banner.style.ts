@@ -9,8 +9,9 @@ export const Banner = styled.section<Path>`
     `url('https://image.tmdb.org/t/p/original/${props.$path}')`};
   background-size: cover;
   background-position: center;
-  object-fit: fit;
-  height: 500px;
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 480px;
   width: 100%;
 
   @media (max-width: 750px) {
