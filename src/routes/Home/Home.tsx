@@ -7,7 +7,14 @@ const Home = () => {
   return (
     <S.Home>
       <Banner />
-      <MovieCarousel genre='인기 콘텐츠' fetchUrl={requests.fetchTrending} />
+      <MovieCarousel genre='Trending' fetchUrl={requests.fetchTrending} />
+      <MovieCarousel genre='Comedy' fetchUrl={requests.fetchComedyMovies} />
+      <MovieCarousel genre='Horror' fetchUrl={requests.fetchHorrorMovies} />
+      <MovieCarousel genre='Action' fetchUrl={requests.fetchActionMovies} />
+      <MovieCarousel
+        genre='Documentaries'
+        fetchUrl={requests.fetchDocumentaries}
+      />
     </S.Home>
   );
 };
