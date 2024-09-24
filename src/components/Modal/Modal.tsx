@@ -1,5 +1,5 @@
 import * as S from './Modal.style';
-import { Dispatch, SetStateAction, useEffect } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 interface Movie {
   id?: number;
@@ -27,10 +27,27 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
     };
   }, []);
 
+  const modalRef = useRef<HTMLScriptElement>(null);
+
+  const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      setModalOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
+
   return (
     <S.Presentation role='presentation'>
       <S.Container>
-        <S.Modal>
+        <S.Modal ref={modalRef}>
           <S.Close onClick={() => setModalOpen(false)}>✕</S.Close>
           <S.MovieBackdrop
             src={
