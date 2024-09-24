@@ -1,21 +1,9 @@
-@font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('/fonts/Pretendard-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Pretendard-Bold';
-  src: url('/fonts/Pretendard-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Pretendard-Light';
-  src: url('/fonts/Pretendard-Light.woff') format('woff');
-}
+@import url('./styles/colors.css');
+@import url('./styles/fonts.css');
 
 body {
-  background-color: #000;
-  color: #d9d9d9;
+  background-color: var(--background-color);
+  color: var(--primary-color);
   font-family: 'Pretendard-Regular';
   margin: 0;
   padding: 0;
