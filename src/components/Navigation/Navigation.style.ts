@@ -6,7 +6,8 @@ export const Nav = styled.nav`
   left: 0;
   right: 0;
   height: 70px;
-  padding: 0 1rem;
+  padding-left: 0.7rem;
+  padding-right: 1.1rem;
   box-sizing: border-box;
   background-color: black;
   display: flex;
