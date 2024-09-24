@@ -7,6 +7,7 @@ export const Home = styled.main`
   display: flex;
   flex-direction: column;
   top: 50px;
+  padding: 0 1rem;
 
   @media (max-width: 450px) {
     top: 30px;
