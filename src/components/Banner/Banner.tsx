@@ -38,12 +38,6 @@ const Banner: React.FC = () => {
     }
   };
 
-  // const truncate = (overview: string | undefined, n: number) => {
-  //   if (typeof overview === 'string')
-  //     return overview?.length > n ? overview.substring(0, n) + '...' : overview;
-  //   else return;
-  // };
-
   return (
     <S.Banner $path={movie?.backdrop_path || ''}>
       <S.Backdrop $path={'/images/background.svg'}>
