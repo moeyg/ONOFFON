@@ -2,50 +2,31 @@ import styled from 'styled-components';
 
 export const LoginPage = styled.div`
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url('/images/background.svg');
+  background-position: center;
+  object-fit: contain;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 400px) {
-    background-color: #d9d9d9;
-  }
 `;
 
 export const Container = styled.section`
   position: relative;
   padding: 3rem 2.5rem;
   padding-bottom: 0.8rem;
-  gap: 3rem;
-  background-color: #d9d9d9;
+  gap: 2rem;
   color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: rotate(1.8deg);
 
   @media (max-width: 400px) {
     width: 100%;
     padding: 3rem 0px 1.2rem;
     transform: rotate(0deg);
-  }
-
-  &::before {
-    content: '';
-    top: 0;
-    left: 0;
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    color: teal;
-    position: absolute;
-    background-color: black;
-
-    @media (max-width: 400px) {
-      display: none;
-    }
   }
 `;
 
@@ -54,30 +35,43 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.img`
-  max-width: 106px;
+  max-width: 356px;
+  margin-bottom: 5px;
+  @media (max-width: 550px) {
+    max-width: 246px;
+  }
 `;
 
 export const Description = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 0.9rem;
-`;
-
-export const QRcode = styled.img`
-  max-width: 150px;
-  margin-top: -10px;
+  font-size: 1.1rem;
+  color: #ffdbb7;
+  @media (max-width: 550px) {
+    font-size: 0.85rem;
+  }
 `;
 
 export const LoginButton = styled.button`
-  padding: 1.2rem 2.5rem;
-  border-radius: 50%;
-  border: 1px solid black;
-  background: linear-gradient(to bottom, #d9d9d9, #393939);
+  width: 15rem;
+  height: 3.5rem;
+  border-radius: 20px;
+  border: 1px solid #ff7f00;
+  background: black;
+  font-size: 1.2rem;
   text-align: center;
+  color: #ff7f00;
   display: inline-block;
   cursor: pointer;
 
+  @media (max-width: 550px) {
+    font-size: 0.8rem;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 10px;
+  }
+
   &:hover {
-    scale: calc(0.96);
+    opacity: 0.7;
     transition: 300ms ease-in-out;
   }
 `;
