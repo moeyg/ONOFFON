@@ -52,7 +52,6 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
   const openModal = (movie: Movie) => {
     setMovie(movie);
     setModalOpen(true);
-    console.log(movie);
   };
 
   return (
