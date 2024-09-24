@@ -10,6 +10,17 @@ export const LoginPage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: var(--background-color);
+    z-index: -1;
+    inset: 0;
+    opacity: 0.7;
+  }
 `;
 
 export const Container = styled.section`
@@ -45,7 +56,7 @@ export const Logo = styled.img`
 export const Description = styled.p`
   font-family: 'Pretendard-Light';
   font-size: 1.1rem;
-  color: #ffdbb7;
+  color: var(--secondary-color);
   @media (max-width: 550px) {
     font-size: 0.85rem;
   }
@@ -55,11 +66,11 @@ export const LoginButton = styled.button`
   width: 15rem;
   height: 3.5rem;
   border-radius: 20px;
-  border: 1px solid #ff7f00;
-  background: black;
+  border: 1px solid var(--primary-color);
+  background-color: var(--background-color);
   font-size: 1.2rem;
   text-align: center;
-  color: #ff7f00;
+  color: var(--primary-color);
   display: inline-block;
   cursor: pointer;
 
@@ -73,18 +84,5 @@ export const LoginButton = styled.button`
   &:hover {
     opacity: 0.7;
     transition: 300ms ease-in-out;
-  }
-`;
-
-export const Copyright = styled.footer`
-  width: 120%;
-  text-align: end;
-  font-size: 0.8rem;
-  font-family: 'DotGothic16-Regular';
-  padding-top: 15px;
-  border-top: 1px solid black;
-
-  @media (max-width: 400px) {
-    display: none;
   }
 `;
