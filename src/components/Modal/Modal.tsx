@@ -1,5 +1,11 @@
 import * as S from './Modal.style';
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react';
 
 interface Movie {
   id?: number;
@@ -29,11 +35,14 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
 
   const modalRef = useRef<HTMLScriptElement>(null);
 
-  const handleClickOutside = (e: MouseEvent | TouchEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      setModalOpen(false);
-    }
-  };
+  const handleClickOutside = useCallback(
+    (e: MouseEvent | TouchEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        setModalOpen(false);
+      }
+    },
+    [setModalOpen]
+  );
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
@@ -42,7 +51,7 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
       document.addEventListener('mousedown', handleClickOutside);
       document.addEventListener('touchstart', handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   return (
     <S.Presentation role='presentation'>
