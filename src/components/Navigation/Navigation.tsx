@@ -28,11 +28,11 @@ const Navigation = () => {
   return (
     <S.Nav>
       <S.Logo
-        src='/images/logo.svg'
+        src='/images/favicon.svg'
         alt='35MM Logo'
         onClick={() => (window.location.href = '/')}
       />
-      <S.Menu>
+      <S.Content>
         <S.Search>
           {inputVisible && (
             <S.SearchInput
@@ -48,8 +48,8 @@ const Navigation = () => {
             onClick={handleSearchClick}
           />
         </S.Search>
-        <S.Profile src='/images/profile-icon.svg' alt='user profile icon' />
-      </S.Menu>
+        <S.Menu src='/images/menu-icon.svg' alt='user profile icon' />
+      </S.Content>
     </S.Nav>
   );
 };

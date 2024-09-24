@@ -8,7 +8,6 @@ export const Nav = styled.nav`
   height: 70px;
   padding: 0 1rem;
   box-sizing: border-box;
-  border-bottom: 1px solid #d9d9d9;
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -22,7 +21,7 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-  width: 6rem;
+  width: 7.5rem;
   cursor: pointer;
   display: inline-block;
 
@@ -31,7 +30,7 @@ export const Logo = styled.img`
   }
 `;
 
-export const Menu = styled.div`
+export const Content = styled.div`
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -63,11 +62,11 @@ export const SearchIcon = styled.img`
 export const SearchInput = styled.input`
   width: 15rem;
   font-size: 1.2rem;
-  background-color: #d9d9d9;
-  border: none;
+  background-color: inherit;
+  border: 2px solid #ff7f00;
+  color: #ff7f00;
   border-radius: 25px;
-  padding: 7px;
-  color: black;
+  padding: 5px;
   outline: none;
 
   @media (max-width: 450px) {
@@ -76,7 +75,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const Profile = styled.img`
+export const Menu = styled.img`
   width: 2.3rem;
   cursor: pointer;
 
