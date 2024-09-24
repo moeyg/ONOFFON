@@ -21,9 +21,11 @@ interface MovieData {
 
 interface Movie {
   id: number;
-  poster_path: string;
-  name: string;
   title?: string;
+  name?: string;
+  original_name?: string;
+  overview?: string;
+  backdrop_path?: string;
 }
 
 const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
@@ -59,25 +61,13 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
         pagination={{ clickable: true }}
         spaceBetween={15}
         breakpoints={{
-          1378: {
-            slidesPerView: 8,
-            slidesPerGroup: 8,
-          },
-          1100: {
-            slidesPerView: 7,
-            slidesPerGroup: 7,
-          },
           998: {
-            slidesPerView: 6,
-            slidesPerGroup: 6,
-          },
-          625: {
             slidesPerView: 4,
             slidesPerGroup: 4,
           },
           0: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
+            slidesPerView: 3,
+            slidesPerGroup: 3,
           },
         }}
       >
@@ -85,9 +75,12 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
           <SwiperSlide key={movie.id}>
             <S.Movie onClick={() => openModal(movie)}>
               <S.MoviePoster
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                 alt={movie.name}
               />
+              <S.MovieTitle>
+                {movie.name || movie.title || movie.original_name}
+              </S.MovieTitle>
             </S.Movie>
           </SwiperSlide>
         ))}

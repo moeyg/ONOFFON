@@ -12,20 +12,20 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: gray !important;
+  background-color: #313131 !important;
   opacity: 1 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: white !important;
+  background-color: #ff7f00 !important;
 }
 
 .swiper-button-prev {
-  color: white !important;
+  color: #ff7f00 !important;
 }
 
 .swiper-button-next {
-  color: white !important;
+  color: #ff7f00 !important;
 }
 
 .swiper-button-next::after .swiper-button-prev::after {
