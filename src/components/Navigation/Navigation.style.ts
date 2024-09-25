@@ -62,10 +62,10 @@ export const SearchIcon = styled.img`
 
 export const SearchInput = styled.input`
   width: 15rem;
-  height: 0.9rem;
-  font-size: 1.2rem;
+  height: 1.1rem;
+  font-size: 1rem;
   background-color: inherit;
-  border: 2px solid var(--primary-color);
+  border: 1.5px solid var(--primary-color);
   color: var(--primary-color);
   border-radius: 25px;
   padding: 5px 12px;
@@ -74,7 +74,8 @@ export const SearchInput = styled.input`
 
   @media (max-width: 750px) {
     width: 10rem;
-    height: 0.8rem;
+    height: 1rem;
+    font-size: 0.8rem;
     padding: 3px 12px;
   }
 
