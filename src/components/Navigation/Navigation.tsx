@@ -29,7 +29,7 @@ const Navigation = () => {
     <S.Nav>
       <S.Logo
         src='/images/favicon.svg'
-        alt='35MM Logo'
+        alt='ONOFFON Logo'
         onClick={() => (window.location.href = '/')}
       />
       <S.Content>
