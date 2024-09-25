@@ -62,7 +62,7 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
             src={
               movie?.backdrop_path
                 ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
-                : ''
+                : '/images/empty-image.svg'
             }
             alt={movie?.name || movie?.original_name || movie?.title}
           />

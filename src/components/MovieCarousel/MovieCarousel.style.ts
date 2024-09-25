@@ -46,7 +46,6 @@ export const MoviePoster = styled.img`
   opacity: 1;
   transition: opacity 500ms ease-in-out;
   z-index: 1;
-  filter: grayscale(50%);
 `;
 
 export const MovieTitle = styled.p`

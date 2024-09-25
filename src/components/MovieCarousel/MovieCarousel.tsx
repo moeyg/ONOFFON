@@ -54,6 +54,10 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
     setModalOpen(true);
   };
 
+  const truncate = (title: string, n: number) => {
+    return title?.length > n ? title?.substring(0, n) + ' ...' : title;
+  };
+
   return (
     <S.Container>
       <S.MovieGenre>| {genre}</S.MovieGenre>
@@ -82,11 +86,18 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
           <SwiperSlide key={movie.id}>
             <S.Movie onClick={() => openModal(movie)}>
               <S.MoviePoster
-                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                src={
+                  movie.backdrop_path
+                    ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+                    : '/images/empty-image.svg'
+                }
                 alt={movie.name}
               />
               <S.MovieTitle>
-                {movie.name || movie.title || movie.original_name}
+                {truncate(
+                  movie.name || movie.title || movie.original_name || '',
+                  10
+                )}
               </S.MovieTitle>
             </S.Movie>
           </SwiperSlide>
