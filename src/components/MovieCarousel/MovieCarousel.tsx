@@ -41,7 +41,7 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
       const response = await axios.get(fetchUrl);
       setMovies(response.data.results);
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error fetching movie data:', error);
     }
   }, [fetchUrl]);
 
