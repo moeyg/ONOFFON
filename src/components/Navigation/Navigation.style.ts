@@ -27,7 +27,7 @@ export const Logo = styled.img`
   display: inline-block;
 
   @media (max-width: 450px) {
-    width: 4rem;
+    width: 5rem;
   }
 `;
 
@@ -73,7 +73,7 @@ export const SearchInput = styled.input`
   cursor: pointer;
 
   @media (max-width: 750px) {
-    width: 10rem;
+    width: 12rem;
     height: 1rem;
     font-size: 0.8rem;
     padding: 3px 12px;
@@ -81,7 +81,7 @@ export const SearchInput = styled.input`
 
   @media (max-width: 450px) {
     width: 7rem;
-    height: 0.7rem;
+    height: 0.85rem;
     padding: 3px 12px;
     font-size: 0.8rem;
   }

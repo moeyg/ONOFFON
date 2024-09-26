@@ -28,7 +28,7 @@ const Navigation = () => {
   return (
     <S.Nav>
       <S.Logo
-        src='/images/favicon.svg'
+        src='/images/logo.svg'
         alt='ONOFFON Logo'
         onClick={() => (window.location.href = '/')}
       />
