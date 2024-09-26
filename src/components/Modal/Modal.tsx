@@ -68,7 +68,7 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
           />
           <S.MovieContents>
             <S.MovieGenre>
-              <p>| {genre}</p>
+              <span>| {genre}</span>
             </S.MovieGenre>
             <S.MovieTitle>
               {movie?.name || movie?.title || movie?.original_name}
