@@ -1,6 +1,20 @@
+import { auth } from '../../firebase';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import * as S from './Login.style';
 
 const Login = () => {
+  const provider = new GoogleAuthProvider();
+
+  const handleAuth = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error('Error google login: ', error);
+      });
+  };
+
   return (
     <S.LoginPage>
       <S.VisualEffect autoPlay loop muted>
@@ -17,7 +31,7 @@ const Login = () => {
             Super selection, super easy
           </S.Description>
         </S.Header>
-        <S.LoginButton>Google Login</S.LoginButton>
+        <S.LoginButton onClick={handleAuth}>Google Login</S.LoginButton>
       </S.Container>
     </S.LoginPage>
   );
