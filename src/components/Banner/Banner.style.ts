@@ -67,10 +67,6 @@ export const PlayButton = styled.img`
     width: 4.5rem;
     height: 4.5rem;
   }
-  @media (max-width: 550px) {
-    width: 3.9rem;
-    height: 3.9rem;
-  }
 `;
 
 export const MovieTitle = styled.h2`
