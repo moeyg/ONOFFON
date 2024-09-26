@@ -1,7 +1,7 @@
 import axios from '../../api/axios';
 import requests from '../../api/request';
 import * as S from './Banner.style';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Movie {
   id: number;
@@ -18,6 +18,7 @@ interface Movie {
 const Banner: React.FC = () => {
   const [movie, setMovie] = useState<Movie | null>(null);
   const [play, setPlay] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setPlay(false);
@@ -39,6 +40,13 @@ const Banner: React.FC = () => {
     }
   };
 
+  const handleMouseEnter = () => {
+    videoRef.current?.play();
+  };
+  const handleMouseLeave = () => {
+    videoRef.current?.pause();
+  };
+
   return play ? (
     <S.Preview>
       <S.Video>
@@ -51,7 +59,13 @@ const Banner: React.FC = () => {
     </S.Preview>
   ) : (
     <S.Banner $path={movie?.backdrop_path || ''}>
-      <S.VisualEffect $path={'/images/background.svg'}>
+      <S.VisualEffect
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <video ref={videoRef} loop muted>
+          <source src='/videos/noise.mp4' type='video/mp4' />
+        </video>
         {movie?.videos?.results[0]?.key && (
           <S.PlayButton
             onClick={() => setPlay(true)}

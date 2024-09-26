@@ -3,6 +3,9 @@ import * as S from './Login.style';
 const Login = () => {
   return (
     <S.LoginPage>
+      <S.VisualEffect autoPlay loop muted>
+        <source src='/videos/noise.mp4' type='video/mp4' />
+      </S.VisualEffect>
       <S.Container>
         <S.Header>
           <S.Logo src='/public/images/logo.svg' />

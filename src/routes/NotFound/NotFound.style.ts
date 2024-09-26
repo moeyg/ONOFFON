@@ -8,6 +8,16 @@ export const NotFound = styled.section`
   justify-content: center;
 `;
 
+export const VisualEffect = styled.video`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0.13;
+  z-index: -1;
+`;
+
 export const Header = styled.header`
   font-family: 'pretendard-bold';
   font-size: 3rem;

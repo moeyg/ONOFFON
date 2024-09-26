@@ -4,7 +4,6 @@ export const LoginPage = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-image: url('/images/background.svg');
   background-position: center;
   object-fit: contain;
   display: flex;
@@ -21,6 +20,16 @@ export const LoginPage = styled.div`
     inset: 0;
     opacity: 0.7;
   }
+`;
+
+export const VisualEffect = styled.video`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0.38;
+  z-index: -1;
 `;
 
 export const Container = styled.section`

@@ -5,6 +5,7 @@ interface Path {
 }
 
 export const Banner = styled.section<Path>`
+  position: relative;
   background-image: ${(props) =>
     `url('https://image.tmdb.org/t/p/original/${props.$path}')`};
   background-size: cover;
@@ -23,28 +24,35 @@ export const Banner = styled.section<Path>`
   }
 `;
 
-export const VisualEffect = styled.div<Path>`
-  background-image: ${(props) => `url('${props.$path}')`};
-  background-size: cover;
-  background-position: center;
+export const VisualEffect = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+  border-radius: 20px;
+  position: relative;
 
-export const BannerContents = styled.div``;
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0.3;
+  }
+`;
 
 export const PlayButton = styled.img`
   width: 6rem;
   height: 6rem;
   cursor: pointer;
   transition: 300ms;
+  z-index: 1;
+  position: relative;
 
   &:hover {
-    opacity: 0.7;
-    scale: calc(1.05);
+    transform: scale(1.05);
   }
   @media (max-width: 1200px) {
     width: 5rem;
@@ -88,6 +96,7 @@ export const Video = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 20px;
 `;
 
 export const Iframe = styled.iframe`
@@ -96,6 +105,7 @@ export const Iframe = styled.iframe`
   z-index: -1;
   opacity: 0.65;
   border: none;
+  border-radius: 20px;
 
   @media (max-width: 750px) {
     height: 460px;
