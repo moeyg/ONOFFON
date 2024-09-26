@@ -56,14 +56,17 @@ const router = (user: any) =>
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => unsubscribe();
-  }, []);
+  }, [user]);
 
+  if (loading) return <div>loading...</div>;
   return (
     <main className='app'>
       <RouterProvider router={router(user)} />
