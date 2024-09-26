@@ -44,8 +44,8 @@ export const VisualEffect = styled.div`
 `;
 
 export const PlayButton = styled.img`
-  width: 6rem;
-  height: 6rem;
+  width: 6.2rem;
+  height: 6.2rem;
   cursor: pointer;
   transition: 300ms;
   z-index: 1;
@@ -55,17 +55,23 @@ export const PlayButton = styled.img`
     transform: scale(1.05);
   }
   @media (max-width: 1200px) {
-    width: 5rem;
-    height: 5rem;
+    width: 5.5rem;
+    height: 5.5rem;
   }
   @media (max-width: 800px) {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
   @media (max-width: 550px) {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.9rem;
+    height: 3.9rem;
   }
+`;
+
+export const MovieTitle = styled.h2`
+  font-size: 2.5rem;
+  font-family: 'pretendard-bold';
+  text-shadow: 0px 0px 8px black;
 `;
 
 export const FadeBottom = styled.div`

@@ -66,11 +66,15 @@ const Banner: React.FC = () => {
         <video ref={videoRef} loop muted>
           <source src='/videos/noise.mp4' type='video/mp4' />
         </video>
-        {movie?.videos?.results[0]?.key && (
+        {movie?.videos?.results[0]?.key ? (
           <S.PlayButton
             onClick={() => setPlay(true)}
             src='/images/play-button.svg'
           />
+        ) : (
+          <S.MovieTitle>
+            {movie?.name || movie?.title || movie?.original_name}
+          </S.MovieTitle>
         )}
       </S.VisualEffect>
       <S.FadeBottom></S.FadeBottom>
