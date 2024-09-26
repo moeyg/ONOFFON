@@ -6,8 +6,7 @@ export const Nav = styled.nav`
   left: 0;
   right: 0;
   height: 60px;
-  padding-left: 0.7rem;
-  padding-right: 1.1rem;
+  padding: 0 1rem;
   box-sizing: border-box;
   background-color: var(--background-color);
   display: flex;
@@ -93,5 +92,35 @@ export const Menu = styled.img`
 
   @media (max-width: 450px) {
     width: 1.5rem;
+  }
+`;
+
+export const Logout = styled.div`
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  background-color: var(--background-color);
+  width: 100px;
+  height: 30px;
+  padding: 20px 5px 5px 5px;
+  text-align: center;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: 450px) {
+    padding: 5px 0px 8px 0px;
+    height: 25px;
+  }
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+
+  @media (max-width: 450px) {
+    font-size: 0.85rem;
   }
 `;

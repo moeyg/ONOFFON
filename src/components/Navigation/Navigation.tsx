@@ -1,13 +1,16 @@
 import * as S from './Navigation.style';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 const Navigation = () => {
   const [inputVisible, setInputVisible] = useState(false);
+  const [logoutVisible, setLogoutVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  const inputRef = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
   const { search } = useLocation();
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     const query = new URLSearchParams(search);
@@ -23,6 +26,16 @@ const Navigation = () => {
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`, { replace: true });
     if (!inputVisible && inputRef.current) inputRef.current.focus();
+  };
+
+  const handleMenuClick = () => {
+    setLogoutVisible((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => navigate('/'))
+      .catch((error) => console.log('Error logging out: ', error));
   };
 
   return (
@@ -48,8 +61,19 @@ const Navigation = () => {
             onClick={handleSearchClick}
           />
         </S.Search>
-        <S.Menu src='/images/menu-icon.svg' alt='user profile icon' />
+        <S.Menu
+          onClick={handleMenuClick}
+          src='/images/menu-icon.svg'
+          alt='user profile icon'
+        />
       </S.Content>
+      {logoutVisible && (
+        <S.Logout>
+          <S.Button onClick={handleLogout}>
+            <span>로그아웃</span>
+          </S.Button>
+        </S.Logout>
+      )}
     </S.Nav>
   );
 };
