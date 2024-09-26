@@ -17,10 +17,11 @@ export const Banner = styled.section<Path>`
   box-shadow: rgb(0 0 0 /69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   border-radius: 20px;
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
 
   @media (max-width: 750px) {
     height: 460px;
+    border-radius: 8px;
   }
 `;
 
@@ -32,6 +33,10 @@ export const VisualEffect = styled.div`
   justify-content: center;
   border-radius: 20px;
   position: relative;
+
+  @media (max-width: 750px) {
+    border-radius: 8px;
+  }
 
   video {
     width: 100%;
@@ -96,6 +101,10 @@ export const Preview = styled.section`
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   border-radius: 20px;
   margin-top: 1.2rem;
+
+  @media (max-width: 750px) {
+    border-radius: 8px;
+  }
 `;
 
 export const Video = styled.div`
@@ -103,6 +112,10 @@ export const Video = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 20px;
+
+  @media (max-width: 750px) {
+    border-radius: 8px;
+  }
 `;
 
 export const Iframe = styled.iframe`
@@ -115,6 +128,7 @@ export const Iframe = styled.iframe`
 
   @media (max-width: 750px) {
     height: 460px;
+    border-radius: 8px;
   }
 
   &::after {
