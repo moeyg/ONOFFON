@@ -1,14 +1,19 @@
 import { auth } from '../../firebase';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {
+  browserLocalPersistence,
+  GoogleAuthProvider,
+  setPersistence,
+  signInWithPopup,
+} from 'firebase/auth';
 import * as S from './Login.style';
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
 
   const handleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log(result);
+    setPersistence(auth, browserLocalPersistence)
+      .then(() => {
+        return signInWithPopup(auth, provider);
       })
       .catch((error) => {
         console.error('Error google login: ', error);
