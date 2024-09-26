@@ -28,7 +28,7 @@ export const VisualEffect = styled.video`
   position: absolute;
   object-fit: cover;
   border-radius: 20px;
-  opacity: 0.38;
+  opacity: 0.3;
   z-index: -1;
 `;
 
