@@ -53,10 +53,12 @@ export const MovieTitle = styled.p`
   font-size: 1rem;
   color: var(--primary-color);
   opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60%;
+  text-align: center;
 
-  @media (max-width: 1100px) {
-    font-size: 0.9rem;
-  }
   @media (max-width: 850px) {
     font-size: 0.8rem;
   }

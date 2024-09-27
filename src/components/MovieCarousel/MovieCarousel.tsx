@@ -54,10 +54,6 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
     setModalOpen(true);
   };
 
-  const truncate = (title: string, n: number) => {
-    return title?.length > n ? title?.substring(0, n) + ' ...' : title;
-  };
-
   return (
     <S.Container>
       <S.MovieGenre>| {genre}</S.MovieGenre>
@@ -94,10 +90,7 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
                 alt={movie.name}
               />
               <S.MovieTitle>
-                {truncate(
-                  movie.name || movie.title || movie.original_name || '',
-                  8
-                )}
+                {movie.name || movie.title || movie.original_name || ''}
               </S.MovieTitle>
             </S.Movie>
           </SwiperSlide>
