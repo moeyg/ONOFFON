@@ -22,6 +22,8 @@ export const Banner = styled.section<Path>`
   @media (max-width: 750px) {
     height: 460px;
     border-radius: 8px;
+    margin-top: 1.33rem;
+    filter: grayscale(30%);
   }
 `;
 
@@ -45,6 +47,9 @@ export const VisualEffect = styled.div`
     object-fit: cover;
     border-radius: 20px;
     opacity: 0.3;
+    @media (max-width: 750px) {
+      display: none;
+    }
   }
 `;
 
@@ -73,6 +78,9 @@ export const MovieTitle = styled.h2`
   font-size: 2.5rem;
   font-family: 'pretendard-bold';
   text-shadow: 0px 0px 8px black;
+  @media (max-width: 750px) {
+    font-size: 2.2rem;
+  }
 `;
 
 export const FadeBottom = styled.div`
@@ -153,5 +161,11 @@ export const Close = styled.button`
 
   @media (min-width: 1200px) {
     font-size: 1.8rem;
+    left: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.8rem;
+    left: 10px;
   }
 `;

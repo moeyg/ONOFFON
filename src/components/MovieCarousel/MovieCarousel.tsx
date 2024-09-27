@@ -96,7 +96,7 @@ const MovieCarousel: React.FC<MovieData> = ({ genre, fetchUrl }) => {
               <S.MovieTitle>
                 {truncate(
                   movie.name || movie.title || movie.original_name || '',
-                  10
+                  8
                 )}
               </S.MovieTitle>
             </S.Movie>
