@@ -27,7 +27,7 @@ const Login = () => {
       </S.VisualEffect>
       <S.Container>
         <S.Header>
-          <S.Logo src='/public/images/logo.svg' />
+          <S.Logo src='/images/logo.svg' alt='로고이미지' />
           <S.Description>
             Find your next super movie adventure
             <br />
