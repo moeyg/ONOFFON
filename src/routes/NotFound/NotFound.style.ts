@@ -16,6 +16,10 @@ export const VisualEffect = styled.video`
   border-radius: 20px;
   opacity: 0.1;
   z-index: -1;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 export const Header = styled.header`

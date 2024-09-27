@@ -30,6 +30,10 @@ export const VisualEffect = styled.video`
   border-radius: 20px;
   opacity: 0.3;
   z-index: -1;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 export const Container = styled.section`
