@@ -95,32 +95,42 @@ export const Menu = styled.img`
   }
 `;
 
-export const Logout = styled.div`
+export const MenuItems = styled.div`
   position: absolute;
   top: 50px;
   right: 0px;
   background-color: var(--background-color);
   width: 100px;
-  height: 30px;
-  padding: 20px 5px 5px 5px;
+  padding: 25px 5px 15px 15px;
   text-align: center;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
-
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
   @media (max-width: 450px) {
-    padding: 5px 0px 8px 0px;
-    height: 25px;
+    padding: 8px 0px 15px 15px;
   }
 `;
 
-export const Button = styled.button`
+export const Item = styled.button`
   cursor: pointer;
   border: none;
   background-color: inherit;
   color: var(--primary-color);
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
 
   @media (max-width: 450px) {
     font-size: 0.85rem;
   }
+`;
+
+export const Icon = styled.img`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 `;

@@ -68,11 +68,16 @@ const Navigation = () => {
         />
       </S.Content>
       {logoutVisible && (
-        <S.Logout>
-          <S.Button onClick={handleLogout}>
+        <S.MenuItems>
+          <S.Item onClick={() => navigate('/likes')}>
+            <S.Icon src='/images/heart-fill-icon.svg' alt='로그아웃' />
+            <span>좋아요</span>
+          </S.Item>
+          <S.Item onClick={handleLogout}>
+            <S.Icon src='/images/logout-icon.svg' alt='로그아웃' />
             <span>로그아웃</span>
-          </S.Button>
-        </S.Logout>
+          </S.Item>
+        </S.MenuItems>
       )}
     </S.Nav>
   );
