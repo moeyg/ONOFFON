@@ -1,3 +1,4 @@
+import LikeButton from '../LikeButton/LikeButton';
 import * as S from './Modal.style';
 import {
   Dispatch,
@@ -83,6 +84,7 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
               평점: {Math.floor(Number(movie?.vote_average) * 10) / 10}
             </S.MovieRate>
             <S.MovieOverview>{movie?.overview}</S.MovieOverview>
+            <LikeButton movieId={movie?.id} />
           </S.MovieContents>
         </S.Modal>
       </S.Container>
