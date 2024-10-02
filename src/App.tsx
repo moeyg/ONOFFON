@@ -12,6 +12,7 @@ import Login from './routes/Login/Login';
 import Home from './routes/Home/Home';
 import MovieDetail from './routes/MovieDetail/MovieDetail';
 import Search from './routes/Search/Search';
+import Likes from './routes/Likes/Likes';
 import NotFound from './routes/NotFound/NotFound';
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
@@ -49,6 +50,10 @@ const router = (user: any) =>
         {
           path: 'search',
           element: user ? <Search /> : <Navigate to='/' />,
+        },
+        {
+          path: 'likes',
+          element: user ? <Likes /> : <Navigate to='/' />,
         },
       ],
     },
