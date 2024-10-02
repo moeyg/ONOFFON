@@ -2,6 +2,7 @@ import * as S from './MovieDetail.style';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from '../../api/axios';
+import LikeButton from '../../components/LikeButton/LikeButton';
 
 interface Movie {
   id?: number;
@@ -71,6 +72,7 @@ const MovieDetail = () => {
             <S.MovieRuntime>러닝타임: {movie.runtime}분</S.MovieRuntime>
           </S.MovieInfo>
           <S.MovieOverview>{movie.overview}</S.MovieOverview>
+          <LikeButton movieId={movie.id} />
         </S.MovieDetails>
       </S.Movie>
     </S.Container>
