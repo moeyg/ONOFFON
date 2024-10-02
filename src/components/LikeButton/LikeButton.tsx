@@ -52,5 +52,6 @@ export default LikeButton;
 export const Like = styled.img`
   width: 30px;
   height: 30px;
+  margin-left: -3.5px;
   cursor: pointer;
 `;
