@@ -1,12 +1,7 @@
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 import LikeButton from '../LikeButton/LikeButton';
 import * as S from './Modal.style';
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 interface Movie {
   id?: number;
@@ -34,25 +29,11 @@ const Modal: React.FC<ModalProps> = ({ setModalOpen, movie, genre }) => {
     };
   }, []);
 
-  const modalRef = useRef<HTMLScriptElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = useCallback(
-    (e: MouseEvent | TouchEvent) => {
-      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-        setModalOpen(false);
-      }
-    },
-    [setModalOpen]
-  );
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-    return () => {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('touchstart', handleClickOutside);
-    };
-  }, [handleClickOutside]);
+  useOnClickOutside(modalRef, () => {
+    setModalOpen(false);
+  });
 
   return (
     <S.Presentation role='presentation'>

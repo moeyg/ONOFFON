@@ -20,7 +20,7 @@ export const Container = styled.section`
   }
 `;
 
-export const Modal = styled.section`
+export const Modal = styled.div`
   position: relative;
   max-width: 800px;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
