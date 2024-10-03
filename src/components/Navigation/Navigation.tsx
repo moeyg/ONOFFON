@@ -3,11 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 const Navigation = () => {
   const [inputVisible, setInputVisible] = useState(false);
-  const [logoutVisible, setLogoutVisible] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const { search } = useLocation();
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -16,11 +18,16 @@ const Navigation = () => {
     const query = new URLSearchParams(search);
     const text = query.get('q');
     if (text) setSearchValue(text);
+    else setSearchValue('');
   }, [search]);
 
   const handleSearchClick = () => {
     setInputVisible((prev) => !prev);
   };
+
+  useOnClickOutside(inputRef, () => {
+    setInputVisible(false);
+  });
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -29,8 +36,12 @@ const Navigation = () => {
   };
 
   const handleMenuClick = () => {
-    setLogoutVisible((prev) => !prev);
+    setMenuVisible((prev) => !prev);
   };
+
+  useOnClickOutside(menuRef, () => {
+    setMenuVisible(false);
+  });
 
   const handleLogout = () => {
     signOut(auth)
@@ -67,10 +78,10 @@ const Navigation = () => {
           alt='user profile icon'
         />
       </S.Content>
-      {logoutVisible && (
-        <S.MenuItems>
+      {menuVisible && (
+        <S.MenuItems ref={menuRef}>
           <S.Item onClick={() => navigate('/likes')}>
-            <S.Icon src='/images/heart-fill-icon.svg' alt='로그아웃' />
+            <S.Icon src='/images/heart-fill-icon.svg' alt='좋아요' />
             <span>좋아요</span>
           </S.Item>
           <S.Item onClick={handleLogout}>
