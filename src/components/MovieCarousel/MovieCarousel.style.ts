@@ -59,7 +59,7 @@ export const MovieTitle = styled.p`
   width: 60%;
   text-align: center;
 
-  @media (max-width: 850px) {
+  @media (max-width: 750px) {
     font-size: 0.8rem;
   }
 `;
