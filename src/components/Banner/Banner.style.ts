@@ -150,7 +150,7 @@ export const Close = styled.button`
   left: 12px;
   bottom: 13px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 2;
   color: var(--primary-color);
   background-color: inherit;
   font-size: 1.5rem;
