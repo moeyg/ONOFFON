@@ -19,11 +19,9 @@ interface Movie {
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
-
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   };
-
   const query = useQuery();
   const navigate = useNavigate();
   const searchedMovie = query.get('q') || '';
