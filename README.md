@@ -4,7 +4,7 @@
 
 <div align="center">
   <a href="#preview">
-    <img src="https://private-user-images.githubusercontent.com/102715022/433004847-9c68968c-bfae-40d2-9e2b-3ffc195b60e8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ0NTEyMTcsIm5iZiI6MTc0NDQ1MDkxNywicGF0aCI6Ii8xMDI3MTUwMjIvNDMzMDA0ODQ3LTljNjg5NjhjLWJmYWUtNDBkMi05ZTJiLTNmZmMxOTViNjBlOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDEyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQxMlQwOTQxNTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZjQ2NjE5OGQyYTFjZTg2NjMyOTBmZGU0NDViZGQzNTgyZWU4MjI1ZGExNmZhOTMxYjc5OWU1MDk4MjZhNmJmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.A4SLaG8NaXosWvN9Q7g4pl_5PitDi18qn_6Tg96xmAU" width=100%>
+    <img src="https://github.com/user-attachments/assets/9c68968c-bfae-40d2-9e2b-3ffc195b60e8" width=100%>
   </a>
   <br />
 </div>
